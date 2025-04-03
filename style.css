@@ -1,0 +1,9 @@
+.pfp {
+    width: 30px
+}
+#skills .progress-bar {
+    height: 8px;
+    border-radius: 5px;
+    background-color: #3498db;
+    transition: width 1s ease-in-out;
+}
