@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class', // Ensures dark mode works by toggling the class
+        };
+    
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('darkMode', document.documentElement.classList.contains('dark') ? 'enabled' : 'disabled');
+        }
+    
+        // Load saved dark mode preference on page load
+        if (localStorage.getItem('darkMode') === 'enabled') {
+            document.documentElement.classList.add('dark');
+        }
+    </script>
+     
+</head>
+<body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
+    <header class="bg-white dark:bg-gray-900 fixed w-full top-0 left-0 shadow-md z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold text-gray-800 dark:text-white">My Portfolio</h1>
+            
+            <!-- Navigation Menu -->
+            <nav>
+                <ul class="hidden md:flex space-x-6 text-gray-700 dark:text-gray-300">
+                    <li><a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400">About</a></li>
+                    <li><a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400">Projects</a></li>
+                    <li><a href="#skills" class="hover:text-blue-600 dark:hover:text-blue-400">Skills</a></li>
+                    <li><a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400">Contact</a></li>
+                </ul>
+            </nav>
+            <!-- Dark Mode Toggle (Fixed Position) -->
+            <button id="dark-mode-toggle" onclick="toggleDarkMode()" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded">
+                Dark Mode
+            </button>
+        </div>
+    
+            <!-- Mobile Menu Button -->
+            <button id="menu-btn" class="md:hidden text-gray-700 dark:text-gray-300">
+                ☰
+            </button>
+        
+    
+        <!-- Mobile Menu -->
+        <nav id="mobile-menu" class="hidden md:hidden absolute w-full bg-white dark:bg-gray-900 shadow-md">
+            <ul class="flex flex-col items-center py-4 space-y-4">
+                <li><a href="#about" class="hover:text-blue-600 dark:hover:text-blue-400">About</a></li>
+                <li><a href="#projects" class="hover:text-blue-600 dark:hover:text-blue-400">Projects</a></li>
+                <li><a href="#skills" class="hover:text-blue-600 dark:hover:text-blue-400">Skills</a></li>
+                <li><a href="#contact" class="hover:text-blue-600 dark:hover:text-blue-400">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    
+    <nav class="p-4 flex justify-between items-center bg-white dark:bg-gray-800 shadow-md">
+        <h1 class="text-2xl font-bold">My Portfolio</h1>
+        <button onclick="toggleDarkMode()" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded">Dark Mode</button>
+    </nav>
+    <section class="py-20 px-8 bg-gray-200 dark:bg-gray-800 text-center">
+        <div class="max-w-4xl mx-auto">
+            <section id="about" class="py-10 px-6">
+                <h2 class="text-3xl font-bold mb-6">About Me</h2>
+            <img src= 'C:\Users\Philip Okoh\Downloads\IMG_5079.JPG' alt="Philip Okoh" class="w-40 h-40 mx-auto rounded-full shadw-lg">
+            <h2 class="text-4xl font-bold mt-4">Hi, my name is Philip Ufedo-Ojo Okoh</h2>
+            <p class="mt-4 text-lg">
+                I'm a <span class="font-semibold">500 level Computer Engineering Student in Nile University Of Nigeria</span> aspiring to be a Network Engineer. I've a passion for 
+                <span class="font-semibold">Networking,</span> <span class="font-semibold">Coding </span>  and <span class="font-semibold">CyberSecurity</span>
+                <span class="text-green-600 dark:text-green-400"></span>.  
+                Some of my hobbies includes Reading, Playing Chess, Coding, Playing table tennis, e.t.c. I also love designing projects that solve real-world problems.
+            </p>
+            <p class="mt-4 text-gray-700 dark:text-gray-300">    
+            </p>
+            <div class="mt-6">
+                <a href="#contact" class="px-6 py-3 bg-blue-600 dark:bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-700 transition">
+                    Contact Me
+                </a>
+            </div>
+        </div>
+    </section>
+        
+    <section class="p-8">
+        <section id="projects" class="py-10 px-6"></section>
+        <h2 class="text-3xl font-bold text-center">Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+            <div class="bg-white dark:bg-gray-800 p-6 rounded shadow-md">
+                <h3 class="text-xl font-bold">A Real Time GPS Tracker System using Arduino</h3>
+                <p class="mt-2">This is a GPS System that utilzes the NEO-6M GPS module to show an individuals current co-ordinates(Longituide & Latitude) alongside the current date and time.</p>
+                <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">COMPONENTS USED <br>Arduino IDE | NEO-6M GPS Module | Arduino UNO| BreadBoard | LCD Displays | Jumper Cables </p>
+                <section class="py-10 px-6 bg-gray-100 dark:bg-gray-900 text-center">
+                    <h2 class="text-3xl font-bold mb-6">Project Showcase</h2>
+                
+                    <!-- Slideshow Container -->
+                    <div class="relative w-full max-w-2xl mx-auto">
+                        <!-- Image Container -->
+                        <div id="carousel1" class="relative w-full h-90 overflow-hidden rounded-lg shadow-lg">
+                            <img src="C:\Users\Philip Okoh\Downloads\IMG_1540.jpg" class="slide1 w-full h-full object-cover">
+                            <img src="C:\Users\Philip Okoh\Downloads\IMG_6455.jpg" class="slide1 w-full h-full object-cover hidden">
+                        </div>
+                
+                        <!-- Navigation Buttons -->
+                        <button id="prev1" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-3 py-2 rounded-full">
+                            &#10094; <!-- Left arrow -->
+                        </button>
+                        <button id="next1" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-3 py-2 rounded-full">
+                            &#10095; <!-- Right arrow -->
+                        </button>
+                    </div>
+                </section>
+            </div>
+            <div class="bg-white dark:bg-gray-800 p-6 rounded shadow-md">
+                <h3 class="text-xl font-bold">Design and Construction of a line following Robotic Car</h3>
+                <p class="mt-2">Line following robot is an autonomous vehicle which detects black line to move over a bright surface. This project was constructed using the Arduino UNO microcontroller as the main component.
+                    It utilizes the IR Sensors to detect the black line on a bright surface. When the Infrared signal falls on the white surface, it gets reflected and it falls on the black surface/line. It also utilizes ultrasonic sensors for obstacle detection and avoidance.
+                </p>
+                <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">COMPONENTS USED <br>Arduino UNO microcontroller | IR Sensors | Arduino IDE| Ultrasonic Sensors | SSG90 Servo Motor | 1860 Li-ion Battery| LEDs | 4WD Car Kit with Car chassis </p>
+                <section class="py-10 px-6 bg-gray-100 dark:bg-gray-900 text-center">
+                    <h2 class="text-3xl font-bold mb-6">Project Showcase</h2>
+                
+                    <!-- Slideshow Container -->
+                    <div class="relative w-full max-w-2xl mx-auto">
+                        <!-- Image Container -->
+                        <div id="carousel2" class="relative w-full h-90 overflow-hidden rounded-lg shadow-lg">
+                            <img src="C:\Users\Philip Okoh\Downloads\7e3df6c0-3852-4e9f-bcb1-a42b4611f1d2.JPG" class="slide2 w-full h-full object-cover">
+                            <img src="C:\Users\Philip Okoh\Downloads\4f101b2a-60c7-43e6-9a3b-bb6c52d93b59.JPG" class="slide2 w-full h-full object-cover hidden">
+                            <img src="C:\Users\Philip Okoh\Downloads\6d148368-dfbf-46b2-a6f9-24e31abf9d08.JPG" class="slide2 w-full h-full object-cover hidden">
+                        </div>
+                
+                        <!-- Navigation Buttons -->
+                        <button id="prev2" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-3 py-2 rounded-full">
+                            &#10094; <!-- Left arrow -->
+                        </button>
+                        <button id="next2" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-3 py-2 rounded-full">
+                            &#10095; <!-- Right arrow -->
+                        </button>
+                    </div>
+                </section>
+                
+
+            </div>
+            <div class="bg-white dark:bg-gray-800 p-6 rounded shadow-md">
+                <h3 class="text-xl font-bold">A Real Time Hand Gesture-to-Voice Communication for Speech Impaired Individuals using Computer Vision</h3>
+                <p class="mt-2">This project is a Real Time Hand Gesture-to-Voice Comunication that translates inputted hand gesture into a voice output and visual output on an LCD display. I achieved this by collecting dataset of hand gestures, training a model using the YOLO (You-Only-Look-Once) architecture
+                    and deploying the trained model on a Raspberry pi.
+                </p> 
+                <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">COMPONENTS USED <br>Raspberry pi | Raspberry Pi Camera Module | LCD Display| USB Speaker | Jumper Cables | Python| SD Card |</p> 
+                <section class="py-10 px-6 bg-gray-100 dark:bg-gray-900 text-center">
+                    <h2 class="text-3xl font-bold mb-6">Project Showcase</h2>
+                
+                    <!-- Slideshow Container -->
+                    <div class="relative w-full max-w-2xl mx-auto">
+                        <!-- Image Container -->
+                        <div id="carousel3" class="relative w-full h-90 overflow-hidden rounded-lg shadow-lg">
+                            <img src="C:\Users\Philip Okoh\Downloads\IMG_6459.PNG" class="slide3 w-full h-full object-cover">
+                            <img src="C:\Users\Philip Okoh\Downloads\IMG_6460.PNG" class="slide3 w-full h-full object-cover hidden">
+                        </div>
+                
+                        <!-- Navigation Buttons -->
+                        <button id="prev3" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-3 py-2 rounded-full">
+                            &#10094; <!-- Left arrow -->
+                        </button>
+                        <button id="next3" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black bg-opacity-50 text-white px-3 py-2 rounded-full">
+                            &#10095; <!-- Right arrow -->
+                        </button>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </section>
+    <section id="skills" class="py-10 px-6 bg-gray-100 dark:bg-gray-900 text-center">
+        <h2 class="text-3xl font-bold mb-6">SKILLS</h2>
+    
+        <!-- Technical Skills -->
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="text-left">
+                <h3 class="text-xl font-semibold mb-4">Technical Skills </h3>
+                <div class="mb-4">
+                    <p class="font-semibold">HTML & CSS</p>
+                    <div class="w-full bg-gray-300 dark:bg-gray-700 rounded-full h-2">
+                        <div class="bg-blue-600 dark:bg-blue-400 h-2 rounded-full" style="width: 70%;"></div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <p class="font-semibold">JavaScript</p>
+                    <div class="w-full bg-gray-300 dark:bg-gray-700 rounded-full h-2">
+                        <div class="bg-yellow-500 dark:bg-yellow-300 h-2 rounded-full" style="width: 60%;"></div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <p class="font-semibold">Python</p>
+                    <div class="w-full bg-gray-300 dark:bg-gray-700 rounded-full h-2">
+                        <div class="bg-green-500 dark:bg-green-300 h-2 rounded-full" style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <p class="font-semibold">Matlab</p>
+                    <div class="w-full bg-gray-300 dark:bg-gray-700 rounded-full h-2">
+                        <div class="bg-red-500 dark:bg-red-300 h-2 rounded-full" style="width: 50%;"></div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <p class="font-semibold">C++</p>
+                    <div class="w-full bg-gray-300 dark:bg-gray-700 rounded-full h-2">
+                        <div class="bg-purple-500 dark:bg-purple-300 h-2 rounded-full" style="width: 60%;"></div>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <p class="font-semibold">Cisco Packet Tracer</p>
+                    <div class="w-full bg-gray-300 dark:bg-gray-700 rounded-full h-2">
+                        <div class="bg-orange-500 dark:bg-orange-300 h-2 rounded-full" style="width: 90%;"></div>
+            </div>
+    
+            <!-- Soft Skills -->
+            <div class="text-left">
+                <h3 class="text-xl font-semibold mb-4">Soft Skills </h3>
+                <ul class="list-disc list-inside space-y-2">
+                    <li>Problem-Solving </li>
+                    <li>Teamwork & Collaboration </li>
+                    <li>Communication Skills </li>
+                    <li>Adaptability </li>
+                    <li>Time Management </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section id="contact" class="py-10 px-6 bg-gray-100 dark:bg-gray-900 text-center">
+        <h2 class="text-3xl font-bold mb-6">Contact Me</h2>
+    
+        <!-- Contact Details -->
+        <div class="max-w-2xl mx-auto text-left">
+            <p class="mb-4"><strong>Email:</strong> <a href="mailto:your.email@example.com" class="text-blue-600 dark:text-blue-400">okohphilip245@gmail.com</a></p>
+            <p class="mb-4"><strong>GitHub:</strong> <a href="https://github.com/yourgithub" target="_blank" class="text-blue-600 dark:text-blue-400">github.com/UfedoPh</a></p>
+            <p class="mb-4"><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/yourlinkedin" target="_blank" class="text-blue-600 dark:text-blue-400">www.linkedin.com/in/philipokoh</a></p>
+        </div>
+    
+        <!-- Contact Form -->
+        <div class="max-w-md mx-auto mt-8">
+            <form action="https://formspree.io/f/moveknrg" method="POST" class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md">
+                <label for="name" class="block text-left font-semibold mb-2">Name</label>
+                <input type="text" id="name" name="name" class="w-full p-2 mb-4 border rounded-lg" required>
+    
+                <label for="email" class="block text-left font-semibold mb-2">Email</label>
+                <input type="email" id="email" name="email" class="w-full p-2 mb-4 border rounded-lg" required>
+    
+                <label for="message" class="block text-left font-semibold mb-2">Message</label>
+                <textarea id="message" name="message" rows="4" class="w-full p-2 mb-4 border rounded-lg" required></textarea>
+    
+                <button type="submit" class="w-full bg-blue-600 dark:bg-blue-400 text-white py-2 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-500">
+                    Send Message
+                </button>
+            </form>
+        </div>
+    </section>
+    <script>
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+    
+        menuBtn.addEventListener("click", () => {
+            mobileMenu.classList.toggle("hidden");
+        });
+    </script>
+    
+    <script>
+        function createSlideshow(carouselId, slideClass, prevId, nextId) {
+            let currentSlide = 0;
+            const slides = document.querySelectorAll(`.${slideClass}`);
+            const totalSlides = slides.length;
+    
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.toggle("hidden", i !== index);
+                });
+            }
+    
+            document.getElementById(nextId).addEventListener("click", () => {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                showSlide(currentSlide);
+            });
+    
+            document.getElementById(prevId).addEventListener("click", () => {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                showSlide(currentSlide);
+            });
+    
+            // Auto-Slide every 5 seconds
+            setInterval(() => {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                showSlide(currentSlide);
+            }, 5000);
+        }
+    
+        // Initialize slideshows for each project
+        createSlideshow("carousel1", "slide1", "prev1", "next1");
+        createSlideshow("carousel2", "slide2", "prev2", "next2");
+        createSlideshow("carousel3", "slide3", "prev3", "next3");
+    </script>
+    
+    
+    <footer class="text-center py-6 bg-white dark:bg-gray-800 shadow-md mt-8">
+        <p>&copy; 2025 PHILIP OKOH. All Rights Reserved.</p>
+    </footer>
+    
+</body>
+</html>
